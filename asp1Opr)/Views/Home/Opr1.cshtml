@@ -1,0 +1,43 @@
+﻿
+
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <p class="col-sm-1">x1s=</p>   <input class="col-sm-1" type="number" value="-70" id="x1S" placeholder="начало x1" />
+            <p class="col-sm-1">x1e=</p> <input class="col-sm-1" type="number" value="70" id="x1E" placeholder="конец x1" />
+        </div>
+
+        <div class="row">
+            <p class="col-sm-1">x2s=</p><input class="col-sm-1" type="number" value="-70" id="x2S" placeholder="начало x2" />
+            <p class="col-sm-1">x2e=</p> <input class="col-sm-1" type="number" value="70" id="x2E" placeholder="конец x2" />
+        </div>
+        <div class="row">
+            <p class="col-sm-1">h=</p><input class="col-sm-1" type="number" value="1" id="h" placeholder="шаг" />
+            <p class="col-sm-1">func=</p>  <input class="col-sm-1" type="text" value="0.5 * x1 * x1 + 0.5 * x2 * x2 - x1 - 2 * x2 + 5" id="func" placeholder="function" />
+        </div>
+        <div class="row">
+            <p class="col-sm-1">limitation1=</p> <input class="col-sm-1" type="text" value="x1 + 4*x2<=10" id="limitation1" placeholder="limitation1" />
+            <p class="col-sm-1">limitation2=</p><input class="col-sm-1" type="text" value="2*x1 + 3*x2>=6" id="limitation2" placeholder="limitation2" />
+        </div>
+
+    </div>
+    <p>
+        <select id="minmax">
+            <option disabled>Выберите мин или максимум</option>
+            <option value="min">мин</option>
+            <option selected value="max">макс</option>
+        </select>
+    </p>
+    <button id="submit">Calculate</button>
+    <div id="mygraph"></div>
+    <script src="~/js/1LAB.js" asp-append-version="true">
+    </script>
+
+
+</body>
+</html>

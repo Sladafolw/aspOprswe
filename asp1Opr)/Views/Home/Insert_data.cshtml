@@ -1,0 +1,37 @@
+﻿<input id="v1" value="11" />
+<input id="v2" value="12" />
+<input id="v3" value="13" />
+<input id="v4" value="14" />
+<input id="v5" value="15" />
+<input id="v6" value="16" />
+<button onclick="InsertDATA()">submit(jsondata)</button>
+
+@section scripts{
+    <script type="text/javascript">
+
+function InsertDATA() {
+    var _data = {
+        "Val1": $('#v1').val(),
+        "Val2": $('#v2').val(),
+        "Val3": $('#v3').val(),
+        "Val4": $('#v4').val(),
+        "Val5": $('#v5').val(),
+        "Val6": $('#v6').val(),
+    };
+    $.ajax({
+        type: 'POST',
+        url: '/Home/Insert_data',
+        data: JSON.stringify(_data),
+        contentType: 'application/json',
+        dataType: "JSON",
+        success: function(r) {
+            console.log("RESULT", r);
+        },
+        error: function(xhr, status, error) {
+            var err = eval("(" + xhr.responseText + ")");
+            alert(err.Message);
+        }
+    });
+}
+    </script>
+}

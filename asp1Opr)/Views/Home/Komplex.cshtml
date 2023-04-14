@@ -1,0 +1,57 @@
+﻿
+
+@*<form asp-action="Komplex">*@
+<div class="m-sm-3">
+    <input type="number" value="3" id="x0" name="x0" placeholder="вещественная" />
+    <input type="number" value="7" id="y0" name="y0" placeholder="мнимая" />
+</div>
+<div class="m-sm-3">
+    <input type="number" value="-7" id="x1" name="x1" placeholder="вещественная" />
+    <input type="number" value="7" id="y1" name="y1" placeholder="мнимая" />
+</div>
+<div>
+    <p>
+        <select id="act">
+            <option disabled>Выберите</option>
+            <option value="+">+</option>
+            <option selected value="-">-</option>
+            <option  value="==">==</option>
+        </select>
+    </p>
+</div>
+<button onclick="InsertDATA()">Send</button>
+@*</form>*@
+<div id="result"></div>
+
+ @section scripts{
+<script type="text/javascript">
+    function InsertDATA() {
+        var _data = {
+           
+            "action": $('#act').val(),
+            "x": $('#x0').val(),
+            "y": $('#x1').val()
+           
+        };
+        var _data2 = {
+            "x": $('#y0').val(),
+            "y": $('#y1').val(),
+            "action": $('#act').val()
+        };
+        $.ajax({
+            type: 'POST',
+            url: '/Home/Komplex',
+            data: JSON.stringify(_data2,_data),
+            contentType: 'application/json',
+            dataType: "JSON",
+            success: function (r) {
+                alert("RESULT", r); 
+            },
+            error: function (xhr, status, error) {
+                var err = eval("(" + xhr.responseText + ")");
+                alert(err.Message);
+            }
+        });
+    }
+</script>
+}

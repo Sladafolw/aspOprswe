@@ -1,0 +1,40 @@
+﻿
+
+<!DOCTYPE html>
+<html>
+<head>
+
+
+</head>
+<body>
+
+    <div class="container">
+        <div class="row">
+            <p class="col-sm-1">func=</p>  <input class="col-sm-1" type="text" value="0.5 * x1 * x1 + 0.5 * x2 * x2 - x1 - 2 * x2 + 5" id="func" placeholder="function" />
+        </div>
+        <div class="row">
+            <p class="col-sm-1">limitation1=</p>    <input class="col-sm-1" type="text" value="x1 + 4*x2<=10" id="limitation1" placeholder="limitation1" />
+            <p class="col-sm-1">limitation2=</p>  <input class="col-sm-1" type="text" value="2*x1 + 3*x2>=6" id="limitation2" placeholder="limitation2" />
+        </div>
+        <div class="row">
+            <p class="col-sm-1">bx=</p><input class="col-sm-1" type="number" id="bx" value="2" placeholder="bx" />
+            <p class="col-sm-1">bz=</p><input class="col-sm-1" type="number" id="bz" value="-5" placeholder="bz" />
+        </div>
+        <div class="row">
+            <p class="col-sm-1">h=</p> <input class="col-sm-1" type="number" value="14" id="h" placeholder="шаг" />
+            <p class="col-sm-1">e=</p>  <input class="col-sm-1" type="number" value="0.01" id="e" placeholder="e" />
+        </div>
+        <p>
+            <select id="minmax">
+                <option disabled>Выберите мин или максимум</option>
+                <option value="min">мин</option>
+                <option selected value="max">макс</option>
+            </select>
+        </p>
+    </div>
+    <button id="submit">Calculate</button>
+    <div id="mygraph"></div>
+    <script src="~/js/Hyk.js" asp-append-version="true"></script>
+
+</body>
+</html>

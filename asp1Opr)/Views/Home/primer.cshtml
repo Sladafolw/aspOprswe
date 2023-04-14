@@ -1,0 +1,53 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+
+    <script type="text/javascript">
+        function drawVisualization() {   var data = null;
+        var graph = null;
+
+     
+
+        // Called when the Visualization API is loaded.
+       
+            // Create and populate a data table.
+            var data = new vis.DataSet();
+            // create some nice looking data with sin/cos
+            var steps = 50;  // number of datapoints will be steps*steps
+            var axisMax = 314;
+            var axisStep = axisMax / steps;
+            for (var x = 0; x < axisMax; x += axisStep) {
+                for (var y = 0; y < axisMax; y += axisStep) {
+                    var value = 1;
+                    data.add({
+                        x: x,
+                        y: y,
+                        z: value,
+                        style: value
+                    });
+                }
+            }
+
+            // specify options
+            var options = {
+                width: '600px',
+                height: '600px',
+                style: 'surface',
+                showPerspective: true,
+                showGrid: true,
+                showShadow: false,
+                keepAspectRatio: true,
+                verticalRatio: 0.5
+            };
+
+            // create a graph3d
+            var container = document.getElementById('mygraph');
+            graph3d = new vis.Graph3d(container, data, options);
+        }
+    </script>
+</head>
+
+<body onload="drawVisualization();">
+    <div id="mygraph"></div>
+</body>
+</html>
