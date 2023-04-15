@@ -562,11 +562,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\говнище\\asp1Opr) — копия (2)\\asp1Opr)\\asp1Opr).csproj",
+      "projectUniqueName": "D:\\говнище\\asp1Opr) — копия (2)\\aspOprs\\asp1Opr)\\asp1Opr).csproj",
       "projectName": "asp1Opr)",
-      "projectPath": "D:\\говнище\\asp1Opr) — копия (2)\\asp1Opr)\\asp1Opr).csproj",
+      "projectPath": "D:\\говнище\\asp1Opr) — копия (2)\\aspOprs\\asp1Opr)\\asp1Opr).csproj",
       "packagesPath": "C:\\Users\\dsdsd\\.nuget\\packages\\",
-      "outputPath": "D:\\говнище\\asp1Opr) — копия (2)\\asp1Opr)\\obj\\",
+      "outputPath": "D:\\говнище\\asp1Opr) — копия (2)\\aspOprs\\asp1Opr)\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

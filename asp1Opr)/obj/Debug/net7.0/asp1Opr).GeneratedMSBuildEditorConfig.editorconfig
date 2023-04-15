@@ -9,65 +9,65 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = asp1Opr_
 build_property.RootNamespace = asp1Opr_
-build_property.ProjectDir = D:\говнище\asp1Opr) — копия (2)\asp1Opr)\
+build_property.ProjectDir = D:\говнище\asp1Opr) — копия (2)\aspOprs\asp1Opr)\
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = D:\говнище\asp1Opr) — копия (2)\asp1Opr)
+build_property.MSBuildProjectDirectory = D:\говнище\asp1Opr) — копия (2)\aspOprs\asp1Opr)
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/говнище/asp1Opr) — копия (2)/asp1Opr)/Views/Home/Hyk.cshtml]
+[D:/говнище/asp1Opr) — копия (2)/aspOprs/asp1Opr)/Views/Home/Hyk.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxIeWsuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/говнище/asp1Opr) — копия (2)/asp1Opr)/Views/Home/Index.cshtml]
+[D:/говнище/asp1Opr) — копия (2)/aspOprs/asp1Opr)/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/говнище/asp1Opr) — копия (2)/asp1Opr)/Views/Home/Insert_data.cshtml]
+[D:/говнище/asp1Opr) — копия (2)/aspOprs/asp1Opr)/Views/Home/Insert_data.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbnNlcnRfZGF0YS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/говнище/asp1Opr) — копия (2)/asp1Opr)/Views/Home/Komplex.cshtml]
+[D:/говнище/asp1Opr) — копия (2)/aspOprs/asp1Opr)/Views/Home/Komplex.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxLb21wbGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/говнище/asp1Opr) — копия (2)/asp1Opr)/Views/Home/mONTE.cshtml]
+[D:/говнище/asp1Opr) — копия (2)/aspOprs/asp1Opr)/Views/Home/mONTE.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxtT05URS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/говнище/asp1Opr) — копия (2)/asp1Opr)/Views/Home/Opr1.cshtml]
+[D:/говнище/asp1Opr) — копия (2)/aspOprs/asp1Opr)/Views/Home/Opr1.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxPcHIxLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/говнище/asp1Opr) — копия (2)/asp1Opr)/Views/Home/penalty.cshtml]
+[D:/говнище/asp1Opr) — копия (2)/aspOprs/asp1Opr)/Views/Home/penalty.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxwZW5hbHR5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/говнище/asp1Opr) — копия (2)/asp1Opr)/Views/Home/primer.cshtml]
+[D:/говнище/asp1Opr) — копия (2)/aspOprs/asp1Opr)/Views/Home/primer.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxwcmltZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/говнище/asp1Opr) — копия (2)/asp1Opr)/Views/Home/Privacy.cshtml]
+[D:/говнище/asp1Opr) — копия (2)/aspOprs/asp1Opr)/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/говнище/asp1Opr) — копия (2)/asp1Opr)/Views/Shared/Error.cshtml]
+[D:/говнище/asp1Opr) — копия (2)/aspOprs/asp1Opr)/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/говнище/asp1Opr) — копия (2)/asp1Opr)/Views/Shared/_ValidationScriptsPartial.cshtml]
+[D:/говнище/asp1Opr) — копия (2)/aspOprs/asp1Opr)/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/говнище/asp1Opr) — копия (2)/asp1Opr)/Views/_ViewImports.cshtml]
+[D:/говнище/asp1Opr) — копия (2)/aspOprs/asp1Opr)/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/говнище/asp1Opr) — копия (2)/asp1Opr)/Views/_ViewStart.cshtml]
+[D:/говнище/asp1Opr) — копия (2)/aspOprs/asp1Opr)/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/говнище/asp1Opr) — копия (2)/asp1Opr)/Views/Shared/_Layout.cshtml]
+[D:/говнище/asp1Opr) — копия (2)/aspOprs/asp1Opr)/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-2oqv34cdow

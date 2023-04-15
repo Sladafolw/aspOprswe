@@ -24,7 +24,7 @@
     } Optimiz(first, second, h, fbaz,) {
         var scope = {
             x1: this.scope.x1,
-            x2: this.scope.x1
+            x2: this.scope.x2
         };
         //if (this.k == 0) {
         //    this.pathfinder = { x1: this.scope.x1, x2: this.scope.x2 }
