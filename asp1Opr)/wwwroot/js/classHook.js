@@ -46,9 +46,12 @@
      
 
         this.f1 = math.evaluate(this.func, scope)
-        if (this.evaluates(this.limitation1, this.limitation2, scope) && this.fbaz > this.f1) {
+        var a;
+        if (this.elem == "min") { a = this.fbaz > this.f1; }
+        if (this.elem == "max") { a = this.fbaz < this.f1; }
+        if (this.evaluates(this.limitation1, this.limitation2, scope) &&a) {
            /*   this.k++*/;
-           /* this.h = this.h - this.e;*/
+            this.h = this.h - this.e;
             this.scope.x1 = scope.x1;
             this.scope.x2 = scope.x2;
             this.fbaz = this.f1;
@@ -67,7 +70,7 @@
             return "marker";
 
         } 
-        if (this.fbaz > this.f1) {
+        if (a) {
            /* this.k++;*/
             this.scope.x1 = scope.x1;
             this.scope.x2 = scope.x2; }; 

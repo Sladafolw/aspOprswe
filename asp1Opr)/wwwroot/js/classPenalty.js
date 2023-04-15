@@ -45,11 +45,13 @@
         if (first == '-' && second == '-') { scope.x1 = this.scope.x1 - h; scope.x2 = this.scope.x2 - h; }
         if (first == '-' && second == '+') { scope.x1 = this.scope.x1 - h; scope.x2 = this.scope.x2 + h; }
      
-
+        var a;
         this.f1 = this.funcWithPx(this.func, this.limitation1, this.limitation2, scope, this.r);
-        if (this.fbaz > this.f1) {
-              this.k++;
-           /* this.h = this.h - this.e;*/
+        if (this.elem == "min") { a = this.fbaz > this.f1; }
+        if (this.elem == "max") { a = this.fbaz < this.f1; }
+        if (a) {
+              /*this.k++;*/
+            this.h = this.h - this.e;
             this.scope.x1 = scope.x1;
             this.scope.x2 = scope.x2;
             this.fbaz = this.f1;
@@ -68,8 +70,8 @@
             return "marker";
 
         } 
-        if (this.fbaz > this.f1) {
-            this.k++;
+        if (a) {
+          /*  this.k++;*/
             this.scope.x1 = scope.x1;
             this.scope.x2 = scope.x2; }; 
     } 
