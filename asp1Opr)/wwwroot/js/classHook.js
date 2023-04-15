@@ -23,7 +23,7 @@
     Optimiz(first, second, h, fbaz,) {
         var scope = {
             x1: this.scope.x1,
-            x2: this.scope.x1
+            x2: this.scope.x2
         };
         //if (this.k == 0) {
         //    this.pathfinder = { x1: this.scope.x1, x2: this.scope.x2 }
@@ -68,7 +68,7 @@
 
         } 
         if (this.fbaz > this.f1) {
-            this.k++;
+           /* this.k++;*/
             this.scope.x1 = scope.x1;
             this.scope.x2 = scope.x2; }; 
     } 
