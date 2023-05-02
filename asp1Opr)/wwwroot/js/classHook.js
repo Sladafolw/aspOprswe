@@ -1,7 +1,7 @@
 ﻿class Hook extends Method {
 
 
-    constructor(x, y, z, bx, bz, limitation1, limitation2, func, elem, h, e, f1, scope, data, k, pathfinder, fbaz) {
+    constructor(x, y, z, bx, bz, limitation1, limitation2, func, elem, h, e, f1, scope, data, k, pathfinder, fbaz,tt1,tt2,h2) {
         super();
         this.x = x;
         this.f1 = f1;
@@ -18,7 +18,9 @@
         this.scope = scope;
         this.data = data; this.k = k;
         this.pathfinder = pathfinder;
-        this.fbaz = fbaz;
+        this.fbaz = fbaz; this.tt1 = tt1;
+        this.tt2 = tt2;
+        this.h2 = h2;
     }
     Optimiz(first, second, h, fbaz,) {
         var scope = {
@@ -122,8 +124,8 @@
         let zr1 = [];
         try {
             this.h = 1;
-            for (let i = -70; i < 70; i = i + this.h) {
-                for (let j = -70; j < 70; j = j + this.h) {
+            for (let i = this.tt1; i < this.tt2; i = i + this.h2) {
+                for (let j = this.tt1; j < this.tt2; j = j + this.h2) {
                     this.scope.x1 = i;
                     this.scope.x2 = j;
                     var limitation1t = math.evaluate(lim1, this.scope);
@@ -143,7 +145,7 @@
         }
 
         catch { }
-        let arrs = this.getXYZ(this.func);
+        let arrs = this.getXYZ(this.tt1, this.tt2, this.h2, this.func);
         x1 = arrs[0];
         y1 = arrs[1];
         z1 = arrs[2];
@@ -153,8 +155,8 @@
         this.scope.x2 = this.bz;
         let allGraphicPar = this.allGraphic(x1, y1, z1);
 
-        let end = this.minOrMaxDot([this.x[a]], [this.z[a]], [this.y[a]], "nam");
-        let path = this.getPathFromDot(this.x, this.y, this.z);
+        let end = this.minOrMaxDot([this.x[a]], [this.z[a]], [this.y[a]], this.elem);
+        let path = this.getPathFromDot(this.x, this.z, this.y);
         this.creatChart(allGraphicPar, path, end);
         let arr = this.getDotsInLimits(this.x, this.y);
 

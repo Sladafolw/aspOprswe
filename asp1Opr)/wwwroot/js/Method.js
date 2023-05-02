@@ -54,7 +54,7 @@
                 },
                 opacity: 0.8
             },
-            name: 'мин',
+            name: type,
             type: 'scatter3d'
         };
         return minDot;
@@ -252,13 +252,13 @@
         }
         return true;
     }
-    getXYZ(func) {
+    getXYZ(tt1,tt2,h2,func) {
         let x1 = [];
         let y1 = [];
         let z1 = [];
-        let n1 = -15;
-        let n2 = 15;
-        let step = 1;
+        let n1 = tt1;
+        let n2 = tt2;
+        let step = h2;
 
         let n = (Math.abs(n1) + Math.abs(n2)) / step;
         n = Math.floor(n);
