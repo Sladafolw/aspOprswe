@@ -128,8 +128,8 @@
                 for (let j = this.tt1; j < this.tt2; j = j + this.h2) {
                     this.scope.x1 = i;
                     this.scope.x2 = j;
-                    var limitation1t = math.evaluate(lim1, this.scope);
-                    var limitation2t = math.evaluate(lim2, this.scope);
+                    var limitation1t = math.evaluate(this.limitation1, this.scope);
+                    var limitation2t = math.evaluate(this.limitation2, this.scope);
 
                     if (limitation1t == true && limitation2t == true) {
                         var value = math.evaluate(this.func, this.scope);

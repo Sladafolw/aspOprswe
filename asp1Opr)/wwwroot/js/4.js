@@ -7,7 +7,7 @@
         document.getElementById("func").value, document.getElementById("minmax").value, parseInt(document.getElementById("h").value), parseFloat(document.getElementById("e").value), f1 = 999999991, parseFloat(document.getElementById("b").value), parseFloat(document.getElementById("r").value), scope = {
             x1: parseInt(document.getElementById("bx").value ?? random(-10, 10)),
             x2: parseInt(document.getElementById("bz").value ?? random(-10, 10))
-    }, 0, 0, document.getElementById("tt1").value, document.getElementById("tt2").value, document.getElementById("h2").value);
+    }, 0, 0, parseInt(document.getElementById("tt1").value), parseInt(document.getElementById("tt2").value), parseInt(document.getElementById("h2").value));
     var linear = new Linear1Lab(x = [], y = [], z = [], -15, -15,
         15, 15,
         1, "x1 + 4 * x2 <= 10", "2*x1 + 3*x2>=6",

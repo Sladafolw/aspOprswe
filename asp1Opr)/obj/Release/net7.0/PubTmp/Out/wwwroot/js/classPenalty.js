@@ -1,7 +1,7 @@
 ﻿class Penalty extends Method {
 
 
-    constructor(x, y, z, bx, bz, limitation1, limitation2, func, elem, h, e, f1, b, r, scope, fbaz, data) {
+    constructor(x, y, z, bx, bz, limitation1, limitation2, func, elem, h, e, f1, b, r, scope, fbaz, data,tt1,tt2,h2) {
         super();
         this.fbaz = fbaz;
         this.data = data;
@@ -20,6 +20,9 @@
         this.b = b;
         this.r = r;
         this.scope = scope;
+        this.tt1 = tt1;
+        this.tt2 = tt2;
+        this.h2 = h2;
 
     } Optimiz(first, second, h, fbaz,) {
         var scope = {
@@ -51,7 +54,7 @@
         if (this.elem == "max") { a = this.fbaz < this.f1; }
         if (a) {
             /*this.k++;*/
-            this.h = this.h - this.e;
+         /*   this.h = this.h - this.e;*/
             this.scope.x1 = scope.x1;
             this.scope.x2 = scope.x2;
             this.fbaz = this.f1;
@@ -95,7 +98,8 @@
         return f1;
     }
     solveAndDraw(idGraph) {
-
+        let lim1 = this.limitation1;
+        let lim2 = this.limitation2;
         try {
 
             if (this.r < 1 || this.b < 1 || this.b < 0) { return; }
@@ -120,9 +124,58 @@
         var a;
         if (this.elem == 'min') { a = this.indexOfSmallest(this.y); }
         else { a = this.indexOfBigger(this.y); }
-        alert("its Hook method= " + "x=" + this.x[a] + " z=" + this.z[a] + " y=" + this.y[a]);
-        this.drawing(this.data, 'dot-color', idGraph);
+        alert("its penalty method= " + "x=" + this.x[a] + " z=" + this.z[a] + " y=" + this.y[a]);
+        
 
+       //
+      
+       
+        let x1=[];
+        let y1 = [];
+        let z1 = [];
+        let xr1 = [];
+        let yr1 = [];
+        let zr1 = [];
+        try {
+            this.h = 1;
+            for (let i = tt1; i <tt2; i = i + this.h) {
+                    for (let j = tt1; j <tt2; j = j + this.h) {
+                        this.scope.x1 = i;
+                        this.scope.x2 = j;
+                        var limitation1t = math.evaluate(lim1, this.scope);
+                        var limitation2t = math.evaluate(lim2, this.scope);
+
+                        if (limitation1t == true && limitation2t == true) {
+                            var value = math.evaluate(this.func, this.scope);
+                           xr1.push(i);
+                           yr1.push(value);
+                            zr1.push(j);
+                            
+                        }
+                    }
+                }
+      
+
+            }
+
+            catch { }
+        let arrs = this.getXYZ(this.tt1,this.tt2,this.h2,this.func);
+        x1 = arrs[0];
+        y1 = arrs[1];
+        z1 = arrs[2];
+        
+
+        this.scope.x1 = this.bx;
+        this.scope.x2 = this.bz;
+        let allGraphicPar = this.allGraphic(x1, y1, z1);
+
+        let end = this.minOrMaxDot([this.x[a]], [this.z[a]], [this.y[a]], this.elem);
+        let path = this.getPathFromDot(this.x, this.z,this.y);
+        this.creatChart(allGraphicPar, path, end);
+        let arr = this.getDotsInLimits(this.x, this.y);
+     
+        this.creatChart2D(this.getContour2D(x1, y1, z1), this.getAllDots2D(xr1, zr1), this.minOrMaxDot2D(end.y,end.x, this.elem) ,this.getPathFromDot2D(this.x, this.z));
+        this.drawing(this.data, 'dot-color', idGraph);
     }
 
     limitationReplace(lim) {

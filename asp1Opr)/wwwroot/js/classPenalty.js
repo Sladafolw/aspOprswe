@@ -138,8 +138,8 @@
         let zr1 = [];
         try {
             this.h = 1;
-            for (let i = tt1; i <tt2; i = i + this.h) {
-                    for (let j = tt1; j <tt2; j = j + this.h) {
+            for (let i = this.tt1; i < this.tt2; i = i + this.h2) {
+                for (let j = this.tt1; j < this.tt2; j = j + this.h2) {
                         this.scope.x1 = i;
                         this.scope.x2 = j;
                         var limitation1t = math.evaluate(lim1, this.scope);
