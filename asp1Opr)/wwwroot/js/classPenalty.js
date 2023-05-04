@@ -101,7 +101,11 @@
         let lim1 = this.limitation1;
         let lim2 = this.limitation2;
         try {
-
+            if (!(math.evaluate(this.limitation1, this.scope) && math.evaluate(this.limitation2, this.scope)))
+            {
+                alert("точка не соответствует ограничениям");
+                return;
+            }
             if (this.r < 1 || this.b < 1 || this.b < 0) { return; }
             this.limitation1 = this.limitationReplace(this.limitation1);
             this.limitation2 = this.limitationReplace(this.limitation2);

@@ -101,7 +101,11 @@
         let lim1 = this.limitation1;
         let lim2 = this.limitation2;
         try {
-
+            if (!(math.evaluate(this.limitation1, this.scope) && math.evaluate(this.limitation2, this.scope)))
+            {
+                alert("точка не соответствует ограничениям");
+                return;
+            }
             if (this.r < 1 || this.b < 1 || this.b < 0) { return; }
             this.limitation1 = this.limitationReplace(this.limitation1);
             this.limitation2 = this.limitationReplace(this.limitation2);
@@ -138,8 +142,8 @@
         let zr1 = [];
         try {
             this.h = 1;
-            for (let i = tt1; i <tt2; i = i + this.h) {
-                    for (let j = tt1; j <tt2; j = j + this.h) {
+            for (let i = this.tt1; i < this.tt2; i = i + this.h2) {
+                for (let j = this.tt1; j < this.tt2; j = j + this.h2) {
                         this.scope.x1 = i;
                         this.scope.x2 = j;
                         var limitation1t = math.evaluate(lim1, this.scope);

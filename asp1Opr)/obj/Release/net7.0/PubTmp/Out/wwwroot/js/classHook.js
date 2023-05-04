@@ -1,7 +1,7 @@
 ﻿class Hook extends Method {
 
 
-    constructor(x, y, z, bx, bz, limitation1, limitation2, func, elem, h, e, f1, scope, data, k, pathfinder, fbaz,tt1,tt2,h2) {
+    constructor(x, y, z, bx, bz, limitation1, limitation2, func, elem, h, e, f1, scope, data, k, pathfinder, fbaz, tt1, tt2, h2) {
         super();
         this.x = x;
         this.f1 = f1;
@@ -53,7 +53,7 @@
         if (this.elem == "max") { a = this.fbaz < this.f1; }
         if (this.evaluates(this.limitation1, this.limitation2, scope) && a) {
            /*   this.k++*/;
-          
+
             this.scope.x1 = scope.x1;
             this.scope.x2 = scope.x2;
             this.fbaz = this.f1;
@@ -92,6 +92,10 @@
         this.data = new vis.DataSet();
         var fbaz = 0;
         try {
+            if (!(math.evaluate(this.limitation1, this.scope) && math.evaluate(this.limitation2, this.scope))) {
+                alert("точка не соответствует ограничениям");
+                return;
+            }
             this.fbaz = math.evaluate(this.func, this.scope);
             while (this.h > this.e) {
                 if (this.Optimiz('+', '=', this.h, fbaz,) == "marker") { continue; }
@@ -128,8 +132,8 @@
                 for (let j = this.tt1; j < this.tt2; j = j + this.h2) {
                     this.scope.x1 = i;
                     this.scope.x2 = j;
-                    var limitation1t = math.evaluate(lim1, this.scope);
-                    var limitation2t = math.evaluate(lim2, this.scope);
+                    var limitation1t = math.evaluate(this.limitation1, this.scope);
+                    var limitation2t = math.evaluate(this.limitation2, this.scope);
 
                     if (limitation1t == true && limitation2t == true) {
                         var value = math.evaluate(this.func, this.scope);

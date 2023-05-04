@@ -54,7 +54,7 @@
             let x1 = [];
             let y1 = [];
             let z1 = [];
-            let arrs = this.getXYZ(this.x1s, this.x1e, this.h, this.func);
+            let arrs = this.getXYZ(this.x1s-15, this.x1e+15, this.h, this.func);
             x1 = arrs[0];
             y1 = arrs[1];
             z1 = arrs[2];
@@ -65,7 +65,8 @@
 
             let end = this.minOrMaxDot([this.x[a]], [this.z[a]], [this.y[a]], this.elem);
             let path = this.getPathFromDot(this.x, this.z, this.y);
-            this.creatChart(allGraphicPar, path, end);
+            let allDotPar =this. allDot(this.x, this.z, this.y);
+            this.creatChart(allGraphicPar, allDotPar, end);
             let arr = this.getDotsInLimits(this.x, this.y);
 
             this.creatChart2D(this.getContour2D(x1, y1, z1), this.getAllDots2D(this.x, this.z), this.minOrMaxDot2D(end.y, end.x, this.elem));
