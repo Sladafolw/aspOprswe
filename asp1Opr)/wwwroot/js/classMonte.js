@@ -21,6 +21,7 @@
 
 
     solveAndDraw(idGraph) {
+
         var graph = null; var data = new vis.DataSet();
         try {
             var f = 0;

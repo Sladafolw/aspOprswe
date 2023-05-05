@@ -1,7 +1,7 @@
 ﻿class Hook extends Method {
 
 
-    constructor(x, y, z, bx, bz, limitation1, limitation2, func, elem, h, e, f1, scope, data, k, pathfinder, fbaz, tt1, tt2, h2) {
+    constructor(x, y, z, bx, bz, limitation1, limitation2, func, elem, h, e, f1, scope, data, k, pathfinder, fbaz, tt1, tt2, h2,flag) {
         super();
         this.x = x;
         this.f1 = f1;
@@ -21,6 +21,7 @@
         this.fbaz = fbaz; this.tt1 = tt1;
         this.tt2 = tt2;
         this.h2 = h2;
+        this.flag = flag;
     }
     Optimiz(first, second, h, fbaz,) {
         var scope = {
@@ -36,6 +37,8 @@
         //        if (Math.abs(this.pathfinder.x1 - this.scope.x1) < this.e *4&&Math.abs(this.pathfinder.x2 - this.scope.x2) < this.e * 4)
         //        { this.h = (this.h - this.e)/2 ; }
         //}
+        this.flag++;
+        
         if (this.k > 4) { this.k = 0; }
         if (first == '-' && second == '=') { scope.x1 = this.scope.x1 - h; }
         if (first == '+' && second == '=') { scope.x1 = this.scope.x1 + h; }
@@ -53,7 +56,7 @@
         if (this.elem == "max") { a = this.fbaz < this.f1; }
         if (this.evaluates(this.limitation1, this.limitation2, scope) && a) {
            /*   this.k++*/;
-
+          /*  this.h = (this.h - this.e);*/
             this.scope.x1 = scope.x1;
             this.scope.x2 = scope.x2;
             this.fbaz = this.f1;
@@ -98,6 +101,10 @@
             }
             this.fbaz = math.evaluate(this.func, this.scope);
             while (this.h > this.e) {
+                if (this.flag > 10000) {
+                    alert("Шаг не изменялся 10000 раз, функция растет до бесконечности");
+                    return;
+                }
                 if (this.Optimiz('+', '=', this.h, fbaz,) == "marker") { continue; }
                 if (this.Optimiz('=', '-', this.h, fbaz,) == "marker") { continue; }
                 if (this.Optimiz('=', '+', this.h, fbaz,) == "marker") { continue; }
@@ -106,7 +113,7 @@
                 if (this.Optimiz('+', '-', this.h, fbaz,) == "marker") { continue; }
                 if (this.Optimiz('-', '+', this.h, fbaz,) == "marker") { continue; }
                 if (this.Optimiz('-', '-', this.h, fbaz,) == "marker") { continue; }
-
+                this.flag=0;
                 this.h = (this.h - this.e);
             }
 

@@ -1,7 +1,7 @@
 ﻿class Penalty extends Method {
 
 
-    constructor(x, y, z, bx, bz, limitation1, limitation2, func, elem, h, e, f1, b, r, scope, fbaz, data,tt1,tt2,h2) {
+    constructor(x, y, z, bx, bz, limitation1, limitation2, func, elem, h, e, f1, b, r, scope, fbaz, data,tt1,tt2,h2,flag) {
         super();
         this.fbaz = fbaz;
         this.data = data;
@@ -23,6 +23,7 @@
         this.tt1 = tt1;
         this.tt2 = tt2;
         this.h2 = h2;
+        this.flag = flag;
 
     } Optimiz(first, second, h, fbaz,) {
         var scope = {
@@ -38,6 +39,8 @@
         //        if (Math.abs(this.pathfinder.x1 - this.scope.x1) < this.e *4&&Math.abs(this.pathfinder.x2 - this.scope.x2) < this.e * 4)
         //        { this.h = (this.h - this.e)/2 ; }
         //}
+        this.flag++;
+       
         if (this.k > 4) { this.k = 0; }
         if (first == '-' && second == '=') { scope.x1 = this.scope.x1 - h; }
         if (first == '+' && second == '=') { scope.x1 = this.scope.x1 + h; }
@@ -54,7 +57,7 @@
         if (this.elem == "max") { a = this.fbaz < this.f1; }
         if (a) {
             /*this.k++;*/
-         /*   this.h = this.h - this.e;*/
+       /*     this.h = this.h - this.e;*/
             this.scope.x1 = scope.x1;
             this.scope.x2 = scope.x2;
             this.fbaz = this.f1;
@@ -81,21 +84,20 @@
     }
 
 
-    //evaluates(limitation1, limitation2, scope) {
 
-    //    limitation1 = math.evaluate(limitation1, scope);
-    //    limitation2 = math.evaluate(limitation2, scope);
-    //    return limitation1 && limitation2;
-    //}
     funcWithPx(func, limit1, limit2, scope,) {
-        var px;
-        limit1 = math.evaluate(limit1, scope);
-        limit2 = math.evaluate(limit2, scope);
-        px = this.r * ((1 / limit1) + (1 / limit2));
-        if (px > this.r);
-        { this.r = this.r / this.b; }
-        f1 = math.evaluate(func, scope) + px;
-        return f1;
+                   var px;
+            limit1 = math.evaluate(limit1, scope);
+            limit2 = math.evaluate(limit2, scope);
+            if (limit1 == 0 || limit2 == 0)
+            {
+                return ;
+            }
+            px = this.r * ((1 / limit1) + (1 / limit2));
+            if (px > this.r);
+            { this.r = this.r / this.b; }
+            f1 = math.evaluate(func, scope) + px;
+         return f1;
     }
     solveAndDraw(idGraph) {
         let lim1 = this.limitation1;
@@ -113,6 +115,10 @@
             this.data = new vis.DataSet();
 
             while (this.h > this.e) {
+                if (this.flag > 10000) {
+                    alert("Шаг не изменялся 10000 раз, функция растет до бесконечности");
+                    return;
+                }
                 if (this.Optimiz('+', '=', this.h, this.fbaz,) == "marker") { continue; }
                 if (this.Optimiz('=', '-', this.h, this.fbaz,) == "marker") { continue; }
                 if (this.Optimiz('=', '+', this.h, this.fbaz,) == "marker") { continue; }
@@ -121,7 +127,7 @@
                 if (this.Optimiz('+', '-', this.h, this.fbaz,) == "marker") { continue; }
                 if (this.Optimiz('-', '+', this.h, this.fbaz,) == "marker") { continue; }
                 if (this.Optimiz('-', '-', this.h, this.fbaz,) == "marker") { continue; }
-
+                this.flag = 0;
                 this.h = (this.h - this.e);
             }
         } catch { }
